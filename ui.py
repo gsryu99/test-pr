@@ -1,10 +1,11 @@
-# ch 7.7.2 ui.py
+# ch 8.1.3 ui.py
 
 from PyQt5.QtWidgets import (QApplication, QWidget,     # 애플르케이션 핸들러와 빈 GUI 위젯
                              QPushButton, QVBoxLayout, QMessageBox,  # QMessageBox : 메시지 박스 위젯
                              QPlainTextEdit,            # QPlainTextEdit 추가
                              QHBoxLayout,               # QHBoxLayout 추가
-                             QLineEdit, QComboBox)      # QLineEdit & QComboBox 추가
+                             QLineEdit, QComboBox,      # QLineEdit & QComboBox 추가
+                             QLabel)                    # QLabel 추가
 
 from PyQt5.QtGui import QIcon                           # icon을 추가하기 위한 라이브러리
 from PyQt5 import QtCore    # 모듈 추가
@@ -40,11 +41,13 @@ class View(QWidget):
         hbox_formular.addWidget(self.cb)
         hbox_formular.addWidget(self.le2)
 
+        self.lbl1 = QLabel('v2.3.0', self)      # 버전 정보 표시를 위한 lbl1 위젯 생성
         self.btn1 = QPushButton('Calc',self)    # 버튼 이름 변경
         self.btn2 = QPushButton('Clear',self)
 
         hbox = QHBoxLayout()
         hbox.addStretch(1)
+        hbox.addWidget(self.lbl1)               # 버전 정보 표시를 위한 lbl1 위젯 생성
         hbox.addWidget(self.btn1)
         hbox.addWidget(self.btn2)
 
