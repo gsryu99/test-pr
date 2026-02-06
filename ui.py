@@ -7,7 +7,8 @@ from PyQt5.QtWidgets import (QApplication, QWidget,     # 애플르케이션 핸
                              QLineEdit, QComboBox,      # QLineEdit & QComboBox 추가
                              QLabel)                    # QLabel 추가
 
-from PyQt5.QtGui import QIcon                           # icon을 추가하기 위한 라이브러리
+from PyQt5.QtGui import QIcon, QFont                    # icon을 추가하기 위한 라이브러리
+                                                        # QFont 추가
 from PyQt5 import QtCore    # 모듈 추가
 
 class View(QWidget):
@@ -42,6 +43,7 @@ class View(QWidget):
         hbox_formular.addWidget(self.le2)
 
         self.lbl1 = QLabel('v2.3.0', self)      # 버전 정보 표시를 위한 lbl1 위젯 생성
+        self.lbl1.setFont(QFont('Consolas', 10))       # 폰트 설정 추가, Consolas, 사이즈 10
         self.btn1 = QPushButton('Calc',self)    # 버튼 이름 변경
         self.btn2 = QPushButton('Clear',self)
 
